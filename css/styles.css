@@ -558,9 +558,9 @@ body {
   background-color: #188ce8;
 }
 
-.
 /* ----------------------PORTFOLIO------------------ */
 /* ---------------------- SECTION PORTFOLIO------------------*/
+
 .portfolio-list {
   display: flex;
   justify-content: center;
@@ -754,6 +754,7 @@ body {
   padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: border-color 250ms var(--cubic-bezier);
 }
 .form-text {
   display: block;
@@ -771,13 +772,14 @@ body {
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
+  transition: fill 250ms var(--cubic-bezier);
 }
 .form-input:focus-within,
 .form-textarea:focus-within {
   border-color: var(--accent-text-color);
   outline: transparent;
 }
-.form-input:focus-within + .form-icon {
+.input-wrap:focus-within > .form-icon {
   fill: var(--accent-text-color);
 }
 .form-textarea {
@@ -787,6 +789,7 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
+  transition: border-color 250ms var(--cubic-bezier);
 }
 .form-textarea::placeholder {
   font-size: 14px;
@@ -794,7 +797,7 @@ body {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-.form-policy {
+.text-policy {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -802,8 +805,30 @@ body {
 .form-link {
   color: var(--accent-text-color);
 }
+
 .policy-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 3px;
+  fill: transparent;
+  transition: background-color 250ms var(--cubic-bezier), fill 250ms var(--cubic-bezier);
 }
+.label-policy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-checkbox:checked + .policy-icon {
+  border-color: transparent;
+  fill: #fff;
+  background-color: var(--accent-text-color);
+}
+
 .btn-modal {
   display: flex;
   justify-content: center;
